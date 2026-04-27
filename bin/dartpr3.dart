@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:io';
 import 'dart:math';
 import 'package:characters/characters.dart';
@@ -6,7 +7,7 @@ enum Mood { happy, sad, excited, tired, angry }
 
 void main() {
   print('Введите ваше имя:');
-  String name = stdin.readLineSync()!;
+  String name = stdin.readLineSync(encoding: utf8)!;
   
   print('\nГенерируем случайное настроение...');
   
@@ -56,7 +57,7 @@ void main() {
   
   if (answer.toLowerCase() == 'y') {
     print('Введите комбинацию эмодзи:');
-    String complexEmoji = stdin.readLineSync()!;
+    String complexEmoji = stdin.readLineSync(encoding: utf8)!;
     
     print('\nАнализ строки "$complexEmoji":');
     print('- 16-битных единиц: ${complexEmoji.length}');
